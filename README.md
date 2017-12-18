@@ -34,6 +34,7 @@ $ python manage.py runserver
 Once you have the back-end running, the front end can be started using:
 ```
 $ cd frontend
+$ npm install
 $ npm start
 ```
 
