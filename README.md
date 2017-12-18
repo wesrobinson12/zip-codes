@@ -45,7 +45,7 @@ You should be up and running! Feel free to navigate to `localhost:3000` and chec
 
 In case you don't already have the proper Flask libraries installed, run:
 ```
-$ sudo pip install flask flask_script flask_migrate
+$ sudo pip install flask flask_script flask_migrate psycopg2
 ```
 
 Credit to https://github.com/dternyak/React-Redux-Flask for the boilerplate setup that helped me get up and running quickly.
