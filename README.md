@@ -38,4 +38,13 @@ $ npm install
 $ npm start
 ```
 
+
 You should be up and running! Feel free to navigate to `localhost:3000` and check it out!
+
+### Notes
+
+In case you don't already have the proper Flask libraries installed, run:
+```
+$ sudo pip install flask flask_script flask_migrate flask_bcrypt
+```
+
