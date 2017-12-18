@@ -14,6 +14,14 @@ I used a very simple react UI with an express server running to capture requests
 
 ### Installation
 
+#### PostgreSQL
+
+If you don't have PostgreSQL already, download the app here: http://postgresapp.com/
+
+To create a user, open a terminal and type psql.  If there is an authentication error, use `sudo -u postgres psql template1` to create an initial template.  This will open the psql CLI.  From there, first create a user by typing `CREATE ROLE {yourusername} WITH LOGIN PASSWORD {yourpassword};`.  Close this terminal, open a new one, and login with your new username and password using `sudo -u postgres psql`.  From here, create a database using the command `CREATE DATABASE {yourdatabasename};`.  You should now be setup with a new PostgreSQL database to use with the project.
+
+#### Setup
+
 First, set your database url environment variable using:
 ```
 $ export DATABASE_URL="postgresql://username:password@localhost/{yourdatabasename}"
@@ -45,7 +53,7 @@ You should be up and running! Feel free to navigate to `localhost:3000` and chec
 
 In case you don't already have the proper Flask libraries installed, run:
 ```
-$ sudo pip install flask flask_script flask_migrate
+$ sudo pip install flask flask_script flask_migrate psycopg2
 ```
 
 Credit to https://github.com/dternyak/React-Redux-Flask for the boilerplate setup that helped me get up and running quickly.
