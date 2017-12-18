@@ -27,6 +27,7 @@ app.use(require('morgan')('short'));
 }());
 
 app.all(/^\/api\/(.*)/, (req, res) => {
+    console.log(req);
     proxy.web(req, res, { target: 'http://localhost:5000' });
 });
 
