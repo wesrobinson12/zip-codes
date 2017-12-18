@@ -16,9 +16,13 @@ class ZipCode(db.Model):
 
     @staticmethod
     def get_nearest_zip_codes(lat, lng):
-        zip_and_country = ZipCode.__get_zip_from_latlng(lat, lng)
-        postal_code = zip_and_country["zip"]
-        country = zip_and_country["country"]
+        try:
+            zip_and_country = ZipCode.__get_zip_from_latlng(lat, lng)
+
+            postal_code = zip_and_country["zip"]
+            country = zip_and_country["country"]
+        except:
+            return []
 
         # make request to geo api to get nearest zip codes
         nearest_zip_string = "{url}&postalcode={pc}&country={cntry}".format(url=nearest_zips_url, pc=postal_code, cntry=country)

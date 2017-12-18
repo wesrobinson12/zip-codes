@@ -8,7 +8,7 @@ import json
 def index():
     return render_template('index.html')
 
-@app.route('/top', methods=['GET'])
+@app.route('/api/top', methods=['GET'])
 def top():
     top_string = """
         SELECT code
@@ -20,9 +20,9 @@ def top():
     top_results = db.engine.execute(sql)
     return json.dumps([code["code"] for code in top_results])
 
-@app.route('/search', methods=['POST'])
+@app.route('/api/search', methods=['POST'])
 def search():
     data = request.json
     lng, lat = data["longitude"], data["latitude"]
     nearest = ZipCode.get_nearest_zip_codes(lat, lng)
-    return jsonify(nearest=nearest)
+    return jsonify(nearest)
